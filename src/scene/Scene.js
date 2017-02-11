@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
+// import * as THREE from 'three/build/three.modules';
+// import {Math as ThreeMath} from 'three/build/three.modules' 
+// should also work to avoid name clashes.
 import {
     Scene,
     PerspectiveCamera,
