@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import THREE from 'threejs';
+import {
+    Scene,
+    PerspectiveCamera,
+    WebGLRenderer,
+    BoxGeometry,
+    Geometry,
+    MeshLambertMaterial,
+    MeshBasicMaterial,
+    Mesh,
+    DirectionalLight,
+    AmbientLight,
+    Vector3,
+    Face3
+} from 'three';
+
 import TMD from '../formats/TMD.js';
 
-class Scene extends Component {
+class PolytronScene extends Component {
     constructor() {
         super();
         this.WIDTH = window.innerWidth / 2;
         this.HEIGHT = window.innerHeight / 2;
         // creating webgl renderer
-        this.renderer = new THREE.WebGLRenderer({ alpha: true });
+        this.renderer = new WebGLRenderer({ alpha: true });
         this.renderer.setSize(this.WIDTH, this.HEIGHT);
         this.renderer.setClearColor(0xffffff, 0);
         // creating scene that will contain our meshes
-        this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, this.WIDTH / this.HEIGHT, 0.1, 1000);
+        this.scene = new Scene();
+        this.camera = new PerspectiveCamera(75, this.WIDTH / this.HEIGHT, 0.1, 1000);
 
         // at the moment only one "test" material for rendering
-        // this.material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
-        this.material = new THREE.MeshLambertMaterial({ color: 0xffffff, overdraw: 0.5 })
+        // this.material = new MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
+        this.material = new MeshLambertMaterial({ color: 0xffffff, overdraw: 0.5 })
         //   ======================================================
         //   debug geometry
-        this.geometry = new THREE.BoxGeometry(1, 1, 1);
-        this.cube = new THREE.Mesh(this.geometry, this.material);
+        this.geometry = new BoxGeometry(1, 1, 1);
+        this.cube = new Mesh(this.geometry, this.material);
         this.scene.add(this.cube);
         //   ======================================================
 
@@ -31,12 +45,12 @@ class Scene extends Component {
         // this.camera.position.z = 2;
         this.camera.position.z = 200;
 
-        // var pointLight = new THREE.PointLight( 0xff0000, 1, 100 );
-        var directionalLight = new THREE.DirectionalLight(0xffffff);
+        // var pointLight = new PointLight( 0xff0000, 1, 100 );
+        var directionalLight = new DirectionalLight(0xffffff);
         directionalLight.position.set(0, -70, 100).normalize();
         // pointLight.position.set( 10, 10, 10 );
         this.scene.add(directionalLight);
-        this.scene.add(new THREE.AmbientLight(0x00020));
+        this.scene.add(new AmbientLight(0x00020));
 
         this.renderWebGL = this.renderWebGL.bind(this);
         this.request = this.request.bind(this);
@@ -395,12 +409,12 @@ class Scene extends Component {
 
                 for (var i = 0; i < objects.length; i++) {
                     var obj = objects[i];
-                    var geometry = new THREE.Geometry();
+                    var geometry = new Geometry();
 
                     for (var j = 0; j < obj.vertices.length; j++) {
                         var v = obj.vertices[j];
                         geometry.vertices.push(
-                            new THREE.Vector3(
+                            new Vector3(
                                 v.vx * 0.05, // scale down a little bit
                                 -v.vy * 0.05,
                                 v.vz * 0.05
@@ -411,7 +425,7 @@ class Scene extends Component {
                     for (var j = 0; j < obj.primitives.length; j++) {
                         var primitive = obj.primitives[j];
                         geometry.faces.push(
-                            new THREE.Face3(
+                            new Face3(
                                 primitive.data.v0,
                                 primitive.data.v1,
                                 primitive.data.v2
@@ -419,7 +433,7 @@ class Scene extends Component {
                         );
                     }
 
-                    this.mesh = new THREE.Mesh(geometry, this.material);
+                    this.mesh = new Mesh(geometry, this.material);
                     this.mesh.geometry.computeFaceNormals();
                     this.scene.add(this.mesh);
                 }
@@ -449,4 +463,4 @@ class Scene extends Component {
     }
 }
 
-export default Scene;
+export default PolytronScene;

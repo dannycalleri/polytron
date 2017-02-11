@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-import Scene from './scene/Scene.js';
+import PolytronScene from './scene/Scene.js';
 
 class App extends Component {
   constructor() {
@@ -47,7 +47,7 @@ class App extends Component {
 
         <div id="main" className={"container " + classes}>
           <div className="row">
-            <Scene />
+            <PolytronScene />
             <div className="caption">
               <h2>shotgun</h2>
               <div className="game">
