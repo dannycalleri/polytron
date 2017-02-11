@@ -1,3 +1,12 @@
+Welcome!
+
+## Polytron
+
+What is Polytron and why has been created.
+
+### Architecture
+
+
 
 ## First attempt at reverse engineering RE Director's cut for PSONE
 
