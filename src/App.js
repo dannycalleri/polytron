@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Navigation from './layout/navigation/Navigation';
+import Info from './layout/info/Info';
+
+import logo from './logo.png';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -30,16 +33,21 @@ class App extends Component {
         <header className={classes}>
           <div className="container">
             <div className="row">
-              <div className="col-lg-12">
-                <h1>polytron<span>museum</span></h1>
-                <nav>
-                  <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">catalog</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">contribute</a></li>
-                  </ul>
-                </nav>
+              <div className="col-md-6">
+                <h1 className="logo">
+                  <span className="logo__pentagon">
+                    <img src={logo} alt="Polytron Museum Logo"/>
+                  </span>
+                  <span className="logo__text">
+                    Polytron
+                    <span className="logo__text--black">
+                      Museum
+                    </span>
+                  </span>
+                </h1>
+              </div>
+              <div className="col-md-6">
+                <Navigation />
               </div>
             </div>
           </div>
@@ -47,14 +55,15 @@ class App extends Component {
 
         <div id="main" className={"container " + classes}>
           <div className="row">
-            <PolytronScene />
-            <div className="caption">
-              <h2>shotgun</h2>
-              <div className="game">
-                Resident Evil 1
-              </div>
-            </div>
+            <Info data={[
+              {name:'Resident Evil'},
+              {name:'Shotgun'},
+              {name:'Vertex', value: 1337},
+              {name:'Faces', value: 1337}
+            ]} />
           </div>
+          
+          <PolytronScene />
         </div>
 
         <footer>

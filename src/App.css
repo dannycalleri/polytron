@@ -1,6 +1,33 @@
 body {
-  background-color: #2F3A43;
+  background-color: #71D9C8;
   color: #fff;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+.logo__pentagon {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  margin-right: 0;
+}
+
+.logo__pentagon img {
+  width: 70%;
+}
+
+.logo__text {
+  font-size: 1.125em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.20em;
+  margin-top: 0px;
+}
+
+.logo__text--black {
+  color: #000;
 }
 
 .github-corner {
@@ -13,57 +40,31 @@ body {
 header {
   font-family: 'Lato', sans-serif;
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
   padding-bottom: 20px;
   position: absolute;
   height: 100%;
   transition: all 1s ease-out 1s;
   z-index: 2;
 }
-header .container {
+/*header .container {
   position: absolute;
   top: 50%;
   width: 100%;
   transform: translateY(-50%);
-}
-header.unveil {
+}*/
+/*header.unveil {
   height: 120px;
 }
 header.unveil nav {
   opacity: 1;
+}*/
+
+header {
+  height: 120px;
 }
-header h1 {
-  text-transform: uppercase;
-  font-size: 1em;
-  letter-spacing: 0.40em;
-  margin-top: 0px;
-}
+
 header h1 span {
-  color: #9BA3B4;
-}
-header nav {
-  margin-top: 20px;
-  transition: opacity 0.5s ease-in;
-  opacity: 0;
-}
-header nav ul {
-  text-transform: capitalize;
-  font-size: 0.85em;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-header nav ul li {
-  display: inline-block;
-  border-right: 1px solid #9BA3B4;
-  line-height: 1em;
-  padding-right: 10px;
-  padding-left: 6px;
-}
-header nav ul li:last-child {
-  border-right: none;
-}
-header nav ul a {
   color: #9BA3B4;
 }
 
@@ -71,7 +72,11 @@ header nav ul a {
   opacity: 0;
   transition: all 0.5s ease-out 1.5s;
 }
-#main.unveil {
+/*#main.unveil {
+  opacity: 1;
+}*/
+
+#main {
   opacity: 1;
 }
 
