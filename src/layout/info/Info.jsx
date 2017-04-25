@@ -6,11 +6,15 @@ export default function Info(props){
     <div className="info">
       {
         props.data.map((e) => {
+          let string = e.name;
+          if(e.value){
+            string = `${e.name}: ${e.value}`;
+          }
+
           return (
             <div>
-              <span className="info__element">
-                {e.name} 
-                { e.value ? `:${e.value}` : null }
+              <span className="info__element" data-animation={string}>
+                {string}
               </span>
             </div>
           );
