@@ -58,7 +58,7 @@ class App extends Component {
             <Info data={[
               {name:'Resident Evil'},
               {name:'Shotgun'},
-              {name:'Vertex', value: 1337},
+              {name:'Vertices', value: 1337},
               {name:'Faces', value: 1337}
             ]} />
           </div>
