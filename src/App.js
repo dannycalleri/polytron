@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Navigation from './layout/navigation/Navigation';
+import Header from './layout/header/Header';
 import Info from './layout/info/Info';
 
-import logo from './logo.png';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -30,28 +29,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className={classes}>
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <h1 className="logo">
-                  <span className="logo__pentagon">
-                    <img src={logo} alt="Polytron Museum Logo"/>
-                  </span>
-                  <span className="logo__text">
-                    Polytron
-                    <span className="logo__text--black">
-                      Museum
-                    </span>
-                  </span>
-                </h1>
-              </div>
-              <div className="col-md-6">
-                <Navigation />
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header className={classes} />
 
         <div id="main" className={"container " + classes}>
           <div className="row">
