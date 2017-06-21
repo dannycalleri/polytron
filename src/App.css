@@ -1,5 +1,6 @@
 body {
   background-color: #71D9C8;
+  font-family: 'Lato', sans-serif;
   color: #fff;
 }
 
@@ -44,7 +45,6 @@ a:hover {
 }
 
 header {
-  font-family: 'Lato', sans-serif;
   width: 100%;
   /*text-align: center;*/
   padding-bottom: 20px;
