@@ -11,27 +11,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      mainClasses: []
     };
   }
 
-  componentWillMount() {
-    setTimeout(() => {
-      this.setState({
-        mainClasses: ["unveil"]
-      });
-    }, 1000);
-  }
-
   render() {
-    var classesList = this.state.mainClasses;
-    var classes = classesList.join(' ');
-
     return (
       <div className="App">
-        <Header className={classes} />
+        <Header />
 
-        <div id="main" className={"container " + classes}>
+        <div id="main">
           <div className="row">
             <Info data={[
               {name:'Resident Evil'},
