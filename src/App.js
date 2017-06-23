@@ -11,11 +11,43 @@ class App extends Component {
   constructor() {
     super();
 
-    const arr = ['models/I01V.tmd', 'models/I00V.tmd'];
+    const models = [{
+        game: 'Resident Evil',
+        name: 'Shotgun',
+        path: 'models/I02V.tmd',
+      },
+      {
+        game: 'Resident Evil',
+        name: 'Flame thrower',
+        path: 'models/I01V.tmd', 
+      },
+      {
+        game: 'Resident Evil',
+        name: 'Gun',
+        path: 'models/I00V.tmd',
+      },
+    ];
 
     this.state = {
-      modelPath: 'models/I02V.tmd'
+      model: models[0],
+      vertices: '-',
+      faces: '-',
     };
+
+    this.handleLoadModel = this.handleLoadModel.bind(this);
+
+    // test model change
+    // setInterval(()=>{
+    //   const model = models[Math.floor(Math.random()*models.length)];
+    //   this.setState({model});
+    // },3000)
+  }
+
+  handleLoadModel(vertices, faces){
+    this.setState({
+      vertices,
+      faces
+    });
   }
 
   render() {
@@ -27,19 +59,20 @@ class App extends Component {
           <Info 
             alignLeft
             data={[
-              {name:'Resident Evil'},
-              {name:'Shotgun'},
+              {name: this.state.model.game},
+              {name: this.state.model.name},
             ]} 
           />
           <Info 
             alignRight
             data={[
-              {name:'Vertices', value: 1337},
-              {name:'Faces', value: 1337},
+              {name:'Vertices', value: this.state.vertices},
+              {name:'Faces', value: this.state.faces},
             ]} 
           />
           <PolytronScene
-            model={this.state.modelPath}
+            model={this.state.model.path}
+            onLoadModel={this.handleLoadModel}
           />
         </div>
       </div>

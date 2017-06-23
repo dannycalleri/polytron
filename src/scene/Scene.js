@@ -438,12 +438,14 @@ class PolytronScene extends Component {
           this.mesh = new Mesh(geometry, this.material);
           this.mesh.geometry.computeFaceNormals();
           this.scene.add(this.mesh);
+
+          this.props.onLoadModel(geometry.vertices.length, geometry.faces.length);
         }
       });
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.model !== undefined){
+    if(nextProps.model !== undefined && nextProps.model !== this.props.model) {
       this.loadModel(nextProps.model);
     }
   }
