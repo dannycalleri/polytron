@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './layout/header/Header';
 import Info from './layout/info/Info';
 
+import '../node_modules/font-awesome/css/font-awesome.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -66,6 +67,16 @@ class App extends Component {
           <Info 
             alignRight
             data={[
+              {name:'Vertices', value: this.state.vertices},
+              {name:'Faces', value: this.state.faces},
+            ]} 
+          />
+          <Info 
+            alignLeft
+            modifier='mobile'
+            data={[
+              {name: this.state.model.game},
+              {name: this.state.model.name},
               {name:'Vertices', value: this.state.vertices},
               {name:'Faces', value: this.state.faces},
             ]} 

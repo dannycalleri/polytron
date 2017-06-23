@@ -3,6 +3,7 @@
   margin-right: 8%;
   transition: opacity 0.5s ease-in;
   opacity: 1;
+  text-align: right;
 }
 
 .navigation__list {
@@ -16,8 +17,6 @@
 .navigation__list-element {
   display: inline-block;
   line-height: 1em;
-  padding-right: 10px;
-  padding-left: 6px;
   text-align: center;
 }
 
@@ -57,4 +56,10 @@
 .navigation__list-element-text {
   position:relative;
   z-index: 1;
+}
+
+@media screen and (max-width: 995px) {
+  .navigation {
+    text-align: left;
+  }
 }

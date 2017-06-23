@@ -3,7 +3,7 @@ import './Navigation.css';
 
 export default function Navigation(){
   return (
-    <nav className="navigation text-right">
+    <nav className="navigation">
       <ul className="navigation__list">
         <li className="navigation__list-element">
           <a href="#">

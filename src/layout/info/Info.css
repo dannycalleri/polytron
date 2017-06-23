@@ -4,6 +4,10 @@
   top: 200px;
 }
 
+.info--mobile {
+  display: none;
+}
+
 .info--left {
   left: 60px;
 }
@@ -32,6 +36,28 @@
   animation-name: changewidth;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+@media screen and (max-width: 500px) {
+  .info {
+    display: none;
+    top: auto;
+    bottom: 20px;
+  }
+
+  .info__element {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+
+  .info--left {
+    left: 20px;
+  }
+
+  .info--mobile {
+    display: block;
+  }
 }
 
 @keyframes changewidth {

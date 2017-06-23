@@ -12,6 +12,10 @@ export default function Info(props){
     classes.push('info--right');
   }
 
+  if(props.modifier){
+    classes.push(`info--${props.modifier}`);
+  }
+
   const stringClasses = classes.join(' ');
 
   return (

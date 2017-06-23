@@ -8,9 +8,12 @@ export default function Header(props){
     <header className={props.classes}>
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-xs-12 col-md-6">
             <a href=".">
               <h1 className="logo">
+                <span className="burger-menu">
+                  <i className="fa fa-bars" aria-hidden="true"></i>
+                </span>
                 <span className="logo__pentagon">
                   <img src={logo} alt="Polytron Museum Logo"/>
                 </span>
@@ -23,7 +26,7 @@ export default function Header(props){
               </h1>
             </a>
           </div>
-          <div className="col-md-6">
+          <div className="col-xs-12 col-md-6">
             <Navigation />
           </div>
         </div>
