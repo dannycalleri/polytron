@@ -10,7 +10,11 @@ import PolytronScene from './scene/Scene.js';
 class App extends Component {
   constructor() {
     super();
+
+    const arr = ['models/I01V.tmd', 'models/I00V.tmd'];
+
     this.state = {
+      modelPath: 'models/I02V.tmd'
     };
   }
 
@@ -34,11 +38,10 @@ class App extends Component {
               {name:'Faces', value: 1337},
             ]} 
           />
-          <PolytronScene />
+          <PolytronScene
+            model={this.state.modelPath}
+          />
         </div>
-
-        <footer>
-        </footer>
       </div>
     );
   }

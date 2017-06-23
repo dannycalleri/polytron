@@ -17,14 +17,14 @@ export default function Info(props){
   return (
     <div className={stringClasses}>
       {
-        props.data.map((e) => {
+        props.data.map((e,i) => {
           let string = e.name;
           if(e.value){
             string = `${e.name}: ${e.value}`;
           }
 
           return (
-            <div>
+            <div key={i}>
               <span className="info__element" data-animation={string}>
                 {string}
               </span>

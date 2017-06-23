@@ -37,16 +37,9 @@ class PolytronScene extends Component {
     // at the moment only one "test" material for rendering
     // this.material = new MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
     this.material = new MeshLambertMaterial({ color: 0x691E30, overdraw: 0.5 });
-    //   ======================================================
-    //   debug geometry
-    this.geometry = new BoxGeometry(1, 1, 1);
-    this.cube = new Mesh(this.geometry, this.material);
-    this.scene.add(this.cube);
-    //   ======================================================
 
     this.camera.position.x = 0;
     this.camera.position.y = 0;
-    // this.camera.position.z = 2;
     this.camera.position.z = 200;
 
     // var pointLight = new PointLight( 0xff0000, 1, 100 );
@@ -57,6 +50,7 @@ class PolytronScene extends Component {
     this.scene.add(new AmbientLight(0x00020));
 
     this.renderWebGL = this.renderWebGL.bind(this);
+    this.loadModel = this.loadModel.bind(this);
     this.request = this.request.bind(this);
   }
 
@@ -83,10 +77,14 @@ class PolytronScene extends Component {
     });
   }
 
-  componentWillMount() {
-
-    this.request("models/I02V.tmd")
+  loadModel(path){
+    this.request(path)
       .then((data) => {
+        // remove previous mesh if not null
+        if(this.mesh){
+          this.scene.remove(this.mesh);
+        }
+
         var offset = 0;
         var headerStruct = TMD.createHeader();
         // console.log(headerStruct);
@@ -444,9 +442,18 @@ class PolytronScene extends Component {
       });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(this.props.model !== undefined){
+      this.loadModel(nextProps.model);
+    }
+  }
+
   componentDidMount() {
     // appending canvas element to body
     ReactDOM.findDOMNode(this).appendChild(this.renderer.domElement);
+    if(this.props.model !== undefined){
+      this.loadModel(this.props.model);
+    }
 
     this.renderWebGL();
   }
