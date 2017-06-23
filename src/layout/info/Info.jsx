@@ -2,8 +2,20 @@ import React from 'react';
 import './Info.css'; 
 
 export default function Info(props){
+  const classes = [];
+  classes.push('info');
+  if(props.alignLeft){
+    classes.push('info--left');
+  }
+
+  if(props.alignRight){
+    classes.push('info--right');
+  }
+
+  const stringClasses = classes.join(' ');
+
   return (
-    <div className="info">
+    <div className={stringClasses}>
       {
         props.data.map((e) => {
           let string = e.name;

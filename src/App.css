@@ -46,25 +46,11 @@ a:hover {
 
 header {
   width: 100%;
-  /*text-align: center;*/
   padding-bottom: 20px;
-  position: absolute;
   height: 100%;
   transition: all 1s ease-out 1s;
   z-index: 2;
 }
-/*header .container {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  transform: translateY(-50%);
-}*/
-/*header.unveil {
-  height: 120px;
-}
-header.unveil nav {
-  opacity: 1;
-}*/
 
 header {
   height: 120px;
@@ -78,9 +64,6 @@ header h1 span {
   opacity: 0;
   transition: all 0.5s ease-out 1.5s;
 }
-/*#main.unveil {
-  opacity: 1;
-}*/
 
 #main {
   opacity: 1;
@@ -93,22 +76,6 @@ header h1 span {
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
-}
-
-.caption {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 50px;
-  text-align: center;
-  margin: auto;
-  font-family: "Raleway", sans-serif;
-}
-.caption .game {
-  font-family: "Lato", sans-serif;
-  color: #6877AC;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
 }
 
 @-webkit-keyframes FadeIn {

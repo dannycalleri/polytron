@@ -20,15 +20,20 @@ class App extends Component {
         <Header />
 
         <div id="main">
-          <div className="row">
-            <Info data={[
+          <Info 
+            alignLeft
+            data={[
               {name:'Resident Evil'},
               {name:'Shotgun'},
+            ]} 
+          />
+          <Info 
+            alignRight
+            data={[
               {name:'Vertices', value: 1337},
-              {name:'Faces', value: 1337}
-            ]} />
-          </div>
-          
+              {name:'Faces', value: 1337},
+            ]} 
+          />
           <PolytronScene />
         </div>
 

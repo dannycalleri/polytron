@@ -15,10 +15,10 @@
 
 .navigation__list-element {
   display: inline-block;
-  /*border-right: 1px solid #9BA3B4;*/
   line-height: 1em;
   padding-right: 10px;
   padding-left: 6px;
+  text-align: center;
 }
 
 .navigation__list-element:last-child {
@@ -28,7 +28,8 @@
 .navigation__list-element a {
   position: relative;
   color: #fff;
-  padding: 0 10px;
+  padding: 20px 10px;
+  z-index: 2;
 }
 
 .navigation__list-element-before {
@@ -47,6 +48,10 @@
 
 .navigation__list-element a:hover .navigation__list-element-before {
   height: 100%;
+}
+
+.navigation__list-element a:focus {
+  color: #fff;
 }
 
 .navigation__list-element-text {

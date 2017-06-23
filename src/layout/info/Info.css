@@ -1,6 +1,15 @@
 .info {
   font-family: monospace;
-  margin-top: 100px;
+  position: absolute;
+  top: 200px;
+}
+
+.info--left {
+  left: 60px;
+}
+
+.info--right {
+  right: 60px;
 }
 
 .info__element {
