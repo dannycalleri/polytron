@@ -49,6 +49,7 @@ header {
   padding-bottom: 20px;
   height: 100%;
   transition: all 1s ease-out 1s;
+  position: relative;
   z-index: 2;
 }
 
