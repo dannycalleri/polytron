@@ -4,12 +4,12 @@ import './Info.css';
 export default function Info(props){
   const classes = [];
   classes.push('info');
-  if(props.alignLeft){
-    classes.push('info--left');
+  if(props.alignTop){
+    classes.push('info--top');
   }
 
-  if(props.alignRight){
-    classes.push('info--right');
+  if(props.alignBottom){
+    classes.push('info--bottom');
   }
 
   if(props.modifier){

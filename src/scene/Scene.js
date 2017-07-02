@@ -16,7 +16,9 @@ import {
   DirectionalLight,
   AmbientLight,
   Vector3,
-  Face3
+  Face3,
+  Fog,
+  FogExp2
 } from 'three';
 
 import TMD from '../formats/TMD.js';
@@ -32,6 +34,8 @@ class PolytronScene extends Component {
     this.renderer.setClearColor(0xffffff, 0);
     // creating scene that will contain our meshes
     this.scene = new Scene();
+    // this.scene.fog = new Fog(0xff0000, 0, 1000);
+    this.scene.fog = new FogExp2( 0x71D9C8, 0.0025 );
     this.camera = new PerspectiveCamera(75, this.WIDTH / this.HEIGHT, 0.1, 1000);
 
     // at the moment only one "test" material for rendering

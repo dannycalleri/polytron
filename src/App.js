@@ -66,25 +66,15 @@ class App extends Component {
 
         <div id="main">
           <Info 
-            alignLeft
+            alignTop
             data={[
               {name: this.state.model.game},
               {name: this.state.model.name},
             ]} 
           />
           <Info 
-            alignRight
+            alignBottom
             data={[
-              {name:'Vertices', value: this.state.vertices},
-              {name:'Faces', value: this.state.faces},
-            ]} 
-          />
-          <Info 
-            alignLeft
-            modifier='mobile'
-            data={[
-              {name: this.state.model.game},
-              {name: this.state.model.name},
               {name:'Vertices', value: this.state.vertices},
               {name:'Faces', value: this.state.faces},
             ]} 
