@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   navigationClickHandler(section){
-    this.setState({section});
+    this.setState({section, showOverlayMenu: false});
   }
 
   renderSection(){
