@@ -44,6 +44,10 @@ class App extends Component {
     // },3000)
   }
 
+  navigationClickHandler(section){
+    console.log(section);
+  }
+
   handleLoadModel(vertices, faces){
     this.setState({
       vertices,
@@ -54,7 +58,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header onNavigationClick={this.navigationClickHandler} />
 
         <div id="main">
           <Info 

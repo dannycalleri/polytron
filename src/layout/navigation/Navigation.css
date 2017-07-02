@@ -54,12 +54,11 @@
 }
 
 .navigation__list-element-text {
-  position:relative;
+  position:relative; 
   z-index: 1;
 }
 
 @media screen and (max-width: 995px) {
-  .navigation {
-    text-align: left;
-  }
+  .navigation { display: none; }
+  .navigation--mobile { display: block; }
 }

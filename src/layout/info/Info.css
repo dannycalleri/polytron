@@ -57,6 +57,12 @@
 
   .info--mobile {
     display: block;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+    width:200px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
