@@ -21,23 +21,6 @@ a:hover {
   right: 0;
 }
 
-header {
-  width: 100%;
-  padding-bottom: 20px;
-  height: 100%;
-  transition: all 1s ease-out 1s;
-  position: relative;
-  z-index: 2;
-}
-
-header {
-  height: 120px;
-}
-
-header h1 span {
-  color: #9BA3B4;
-}
-
 #main {
   opacity: 0;
   transition: all 0.5s ease-out 1.5s;

@@ -30,6 +30,7 @@ class App extends Component {
     ];
 
     this.state = {
+      showOverlayMenu: false,
       model: models[0],
       vertices: '-',
       faces: '-',
@@ -58,7 +59,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header onNavigationClick={this.navigationClickHandler} />
+        <span className="burger-menu" onClick={() => this.setState({showOverlayMenu: true})}>
+          <i className="fa fa-bars" aria-hidden="true"></i>
+        </span>
+        <Header showOverlayMenu={this.state.showOverlayMenu} onNavigationClick={this.navigationClickHandler} />
 
         <div id="main">
           <Info 

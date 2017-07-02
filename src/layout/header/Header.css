@@ -1,3 +1,23 @@
+header {
+  width: 100%;
+  padding-bottom: 20px;
+  height: 100%;
+  transition: all 1s ease-out 1s;
+}
+
+header {
+  height: 120px;
+}
+
+header h1 span {
+  color: #9BA3B4;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+}
+
 .logo__pentagon {
   display: inline-block;
   position: relative;
@@ -23,18 +43,24 @@
 
 .burger-menu {
   display:none;
+  cursor: pointer;
   /*background-color: #fff; */
+  /*border-radius: 5px;*/
   color: #000;
   padding: 10px 15px;
-  /*border-radius: 5px;*/
   margin-right: 20px;
   float: left;
   font-size: 1.75em;
-  /*margin-top: 8px;*/
+  position: absolute;
+  z-index: 4;
 }
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 600px) {
   .burger-menu { display: inline-block; }
+  .logo {
+    position: absolute;
+    left: 70px;
+  }
 }
 
 @media screen and (max-width: 400px) {
