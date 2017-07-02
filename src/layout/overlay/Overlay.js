@@ -1,6 +1,11 @@
 import React from 'react';
+import './Overlay.css';
 
 export default class Overlay extends React.Component {
+  static defaultProps = {
+    show: false
+  };
+
   constructor(props){
     super(props);
     this.state = {

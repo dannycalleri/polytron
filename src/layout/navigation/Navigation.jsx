@@ -6,12 +6,6 @@ export default function Navigation(props){
     <nav className={`navigation${props.modifier ? '--'+props.modifier : ''}`}>
       <ul className="navigation__list">
         <li className="navigation__list-element">
-          <a href="#" onClick={() => props.onNavigationClick('home')}>
-            <span className="navigation__list-element-before"></span>
-            <span className="navigation__list-element-text">home</span>
-          </a>
-        </li>
-        <li className="navigation__list-element">
           <a href="#" onClick={() => props.onNavigationClick('catalog')}>
             <span className="navigation__list-element-before"></span>
             <span className="navigation__list-element-text">catalog</span>

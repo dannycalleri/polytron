@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './layout/header/Header';
 import Info from './layout/info/Info';
+import Overlay from './layout/overlay/Overlay';
 
 import '../node_modules/font-awesome/css/font-awesome.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -30,6 +31,7 @@ class App extends Component {
     ];
 
     this.state = {
+      section: 'home',
       showOverlayMenu: false,
       model: models[0],
       vertices: '-',
@@ -37,6 +39,8 @@ class App extends Component {
     };
 
     this.handleLoadModel = this.handleLoadModel.bind(this);
+    this.navigationClickHandler = this.navigationClickHandler.bind(this);
+    this.renderSection = this.renderSection.bind(this);
 
     // test model change
     // setInterval(()=>{
@@ -46,7 +50,21 @@ class App extends Component {
   }
 
   navigationClickHandler(section){
-    console.log(section);
+    this.setState({section});
+  }
+
+  renderSection(){
+    if(this.state.section === 'home'){
+      return null;
+    }
+
+    return (
+      <Overlay show={true}>
+        <section className={`section section--${this.state.section}`}>
+          <h1>{this.state.section}</h1>
+        </section>
+      </Overlay>
+    );
   }
 
   handleLoadModel(vertices, faces){
@@ -59,10 +77,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <span className="burger-menu" onClick={() => this.setState({showOverlayMenu: true})}>
+        <span className="burger-menu" onClick={() => this.setState({showOverlayMenu: true, section: 'home'})}>
           <i className="fa fa-bars" aria-hidden="true"></i>
         </span>
         <Header showOverlayMenu={this.state.showOverlayMenu} onNavigationClick={this.navigationClickHandler} />
+
+        { this.renderSection() }
 
         <div id="main">
           <Info 

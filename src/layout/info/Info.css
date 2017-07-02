@@ -2,10 +2,10 @@
   font-family: 'Oswald', sans-serif;
   text-align: center;
   position: absolute;
-  text-transform: capitalize;
+  text-transform: uppercase;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.25em;
+  font-size: 1em;
   letter-spacing: 0.5em;
 }
 
