@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from './layout/header/Header';
 import Info from './layout/info/Info';
 import Overlay from './layout/overlay/Overlay';
+import Section from './layout/section/Section';
+import Catalog from './layout/sections/Catalog';
 
 import '../node_modules/font-awesome/css/font-awesome.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -53,16 +55,34 @@ class App extends Component {
     this.setState({section, showOverlayMenu: false});
   }
 
+  createSection(Component, title, props){
+    return (
+      <Section
+        modifier={title.toLowerCase()}
+        title={title}
+      >
+        <Component {...props} />
+      </Section>
+    );
+  }
+
   renderSection(){
     if(this.state.section === 'home'){
       return null;
     }
 
+    const props = {
+      list: [{title:'efojief'}, {title:'daneiel'}]
+    };
+    const section = this.createSection(
+      Catalog,
+      this.state.section,
+      props,
+    );
+
     return (
       <Overlay show={true}>
-        <section className={`section section--${this.state.section}`}>
-          <h1>{this.state.section}</h1>
-        </section>
+        {section}
       </Overlay>
     );
   }
