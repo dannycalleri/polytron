@@ -2,18 +2,22 @@
   "name": "polytron",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dannycalleri.github.io/polytron/",
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
   "dependencies": {
     "bootstrap": "3.3.7",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^1.0.0",
     "js-struct": "git+https://github.com/dannycalleri/js-struct.git#8413d3c5bbd5a55b49e7d6673538325fde50afb1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "three": "0.84.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
