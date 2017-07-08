@@ -24,4 +24,5 @@ The main technologies behind the project are **WebGL/Three.js** for 3D rendering
 # Contributing
 
 You're welcome to contribute to the project.
+
 Dig the Issues section and pick one of the open tasks or simply create a new one. 
