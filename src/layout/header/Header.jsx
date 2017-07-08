@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../navigation/Navigation';
 import Overlay from '../overlay/Overlay';
-import logo from '../../logo.png';
+import logo from '../../logo.svg';
 import './Header.css';
 
 export default function Header(props) {
@@ -16,7 +16,15 @@ export default function Header(props) {
             <a href=".">
               <h1 className="logo">
                 <span className="logo__pentagon">
-                  <img src={logo} alt="Polytron Museum Logo"/>
+                  {/*<img src={logo} alt="Polytron Museum Logo"/>*/}
+                  <svg width="25px" height="25px" viewBox="0 0 36 37">
+                    <title>Untitled@2x</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon id="Polygon" stroke="#FFFFFF" stroke-width="5" fill="#FFFFFF" points="18 4 32.2658477 14.3647451 26.8167788 31.1352549 9.18322122 31.1352549 3.73415226 14.3647451"></polygon>
+                    </g>
+                  </svg>
                 </span>
                 <span className="logo__text">
                   Polytron

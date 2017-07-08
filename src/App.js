@@ -4,6 +4,8 @@ import Info from './layout/info/Info';
 import Overlay from './layout/overlay/Overlay';
 import Section from './layout/section/Section';
 import Catalog from './layout/sections/Catalog';
+import Contribute from './layout/sections/Contribute';
+import About from './layout/sections/About';
 
 import '../node_modules/font-awesome/css/font-awesome.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -16,16 +18,19 @@ class App extends Component {
     super();
 
     const models = [{
+        id: 1,
         game: 'Resident Evil',
         name: 'Shotgun',
         path: 'models/I02V.tmd',
       },
       {
+        id: 2,
         game: 'Resident Evil',
         name: 'Flame thrower',
         path: 'models/I01V.tmd', 
       },
       {
+        id: 3,
         game: 'Resident Evil',
         name: 'Gun',
         path: 'models/I00V.tmd',
@@ -40,15 +45,10 @@ class App extends Component {
       faces: '-',
     };
 
+    this.models = models;
     this.handleLoadModel = this.handleLoadModel.bind(this);
     this.navigationClickHandler = this.navigationClickHandler.bind(this);
     this.renderSection = this.renderSection.bind(this);
-
-    // test model change
-    // setInterval(()=>{
-    //   const model = models[Math.floor(Math.random()*models.length)];
-    //   this.setState({model});
-    // },3000)
   }
 
   navigationClickHandler(section){
@@ -71,14 +71,46 @@ class App extends Component {
       return null;
     }
 
-    const props = {
-      list: [{title:'efojief'}, {title:'daneiel'}]
-    };
-    const section = this.createSection(
-      Catalog,
-      this.state.section,
-      props,
-    );
+    let section = null;
+
+    switch(this.state.section){
+      case 'catalog': {
+        const props = {
+          list: this.models,
+          onClick: (id) => {
+            const model = this.models.find(m => m.id === id);
+            this.setState({
+              model,
+              section: 'home'
+            });
+          }
+        };
+        section = this.createSection(
+          Catalog,
+          this.state.section,
+          props,
+        );
+        break;
+      }
+      case 'contribute': {
+        const props = {};
+        section = this.createSection(
+          Contribute,
+          this.state.section,
+          props,
+        );
+        break;
+      }
+      case 'about': {
+        const props = {};
+        section = this.createSection(
+          About,
+          this.state.section,
+          props,
+        );
+        break;
+      }
+    }
 
     return (
       <Overlay show={true}>
