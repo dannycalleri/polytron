@@ -13,7 +13,18 @@ The first stage of the development was the toughest, because I wanted to find a 
 
 So I decided to go for .TMD, that was a quite popular format used to store 3D models for the PSX.
 
+The **first attempt** was **beautiful**.
+A **total mess**:
 
+![](http://dannycalleri.github.io/polytron/readme/1.png)
+
+But gradually the renders started looking better:
+
+![](http://dannycalleri.github.io/polytron/readme/2.png)
+
+![](http://dannycalleri.github.io/polytron/readme/4.png)
+
+![](http://dannycalleri.github.io/polytron/readme/5.png)
 
 
 ## Tech
