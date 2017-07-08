@@ -16,15 +16,15 @@ So I decided to go for .TMD, that was a quite popular format used to store 3D mo
 The **first attempt** was **beautiful**.
 A **total mess**:
 
-![](http://dannycalleri.github.io/polytron/readme/1.png)
+![](http://dannycalleri.github.io/polytron/img/1.png)
 
 But gradually the renders started looking better:
 
-![](http://dannycalleri.github.io/polytron/readme/2.png)
+![](http://dannycalleri.github.io/polytron/img/2.png)
 
-![](http://dannycalleri.github.io/polytron/readme/4.png)
+![](http://dannycalleri.github.io/polytron/img/4.png)
 
-![](http://dannycalleri.github.io/polytron/readme/5.png)
+![](http://dannycalleri.github.io/polytron/img/5.png)
 
 
 ## Tech
