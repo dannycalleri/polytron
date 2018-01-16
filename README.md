@@ -1,5 +1,6 @@
 
-# [Polytron Museum](https://dannycalleri.github.com/polytron/)
+# [Polytron Museum](https://dannycalleri.github.com/polytron/) 
+[![Build Status](https://travis-ci.org/dannycalleri/polytron.svg?branch=master)](https://travis-ci.org/dannycalleri/polytron)
 
 Polytron is a side project I worked on during the last year. 
 I'd like to imagine it as  a **digital museum** for **PSX 3D models**, but actually, it was just an attempt to render **Resident Evil** 3D models using **JavaScript** and **client-side web technologies**.
