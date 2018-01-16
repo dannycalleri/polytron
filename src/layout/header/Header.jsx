@@ -21,8 +21,8 @@ export default function Header(props) {
                     <title>Untitled@2x</title>
                     <desc>Created with Sketch.</desc>
                     <defs></defs>
-                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <polygon id="Polygon" stroke="#FFFFFF" stroke-width="5" fill="#FFFFFF" points="18 4 32.2658477 14.3647451 26.8167788 31.1352549 9.18322122 31.1352549 3.73415226 14.3647451"></polygon>
+                    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"> 
+                      <polygon id="Polygon" stroke="#FFFFFF" strokeWidth="5" fill="#FFFFFF" points="18 4 32.2658477 14.3647451 26.8167788 31.1352549 9.18322122 31.1352549 3.73415226 14.3647451"></polygon>
                     </g>
                   </svg>
                 </span>

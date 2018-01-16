@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://dannycalleri.github.io/polytron/",
   "devDependencies": {
-    "react-scripts": "0.8.5"
+    "react-scripts": "0.9.0"
   },
   "dependencies": {
     "bootstrap": "3.3.7",
