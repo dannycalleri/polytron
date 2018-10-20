@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-// import * as THREE from 'three/build/three.modules';
-// import {Math as ThreeMath} from 'three/build/three.modules' 
-// should also work to avoid name clashes.
 import {
   Scene,
   PerspectiveCamera,
@@ -59,26 +56,13 @@ class PolytronScene extends Component {
   }
 
   request(url) {
-    return new Promise(function (resolve, reject) {
-      var req = new XMLHttpRequest();
-      req.open("GET", url, true);
-      req.responseType = "arraybuffer";
+    const headers = new Headers();
+    headers.append('Accept-Charset', 'x-user-defined'); 
+    const init = {
+      headers,
+    };
 
-      if (req.overrideMimeType) {
-        req.overrideMimeType('text/plain; charset=x-user-defined');
-      }
-      else {
-        req.setRequestHeader('Accept-Charset', 'x-user-defined');
-      }
-
-      req.onload = function (ev) {
-        if (req.status == 200) {
-          resolve(req.response);
-        }
-      };
-
-      req.send();
-    });
+    return fetch(url, init).then(response => response.arrayBuffer());
   }
 
   loadModel(path){
